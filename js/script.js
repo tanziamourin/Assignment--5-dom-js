@@ -1,9 +1,9 @@
-const completeButtons= document.querySelectorAll(".complete-btn");
-const currentDateTime = new Date();
-const formattedDateTime = currentDateTime.toLocaleString();  // Local format
-console.log(formattedDateTime);
+const completeButtons= document.querySelectorAll(".btn-cm");
+
 for(let i = 0; i < completeButtons.length; i++){
     const completeBtn= completeButtons[i];
+
+// complete button , alert
     completeBtn.addEventListener("click", function(event){
         completeBtn.setAttribute("disabled", true);
         alert("Board Updated Successful...");
@@ -16,25 +16,42 @@ for(let i = 0; i < completeButtons.length; i++){
         }
         document.getElementById("task-assigned").innerText= remainingTask;
         const numOfCompleteJob= TotalCompletejob + completeTask;
+
         document.getElementById("total-complete-job").innerText= numOfCompleteJob;
 
         const taskTitle= document.querySelectorAll(".task-title")[i].innerText;
 
+        // task log activity
         const taskLog= document.getElementById("task-log");
+        
         const div= document.createElement("div");
+        
         div.innerHTML= `
             <div class="bg-[#F4F7FF] p-4 text-justify rounded-lg space-y-3 logs">
-                <p>You have Completed the ${taskTitle} at 12.30 p.M</p>      
+                <p>You have Completed the ${taskTitle} at</p> 
             </div>
         `
+       
+
         taskLog.appendChild(div);
     });
 }
-document.getElementById("clear-logs").addEventListener("click", function(event){
-    const logs= document.getElementsByClassName("logs");
-    for(let i= 0; i < logs.length; i++){
-        const log= logs[i];
-        log.classList.add("hidden");
-    }
+// clear-log (removeing job)
 
+document.getElementById("clear-logs").addEventListener("click", function () {
+    const logs = document.querySelectorAll(".logs:not(.hidden)"); 
+
+    if (logs.length > 0) {
+        logs[0].classList.add("hidden"); 
+       
+        let totalCompleteJob = document.getElementById("total-complete-job");
+        let count = parseInt(totalCompleteJob.innerText); 
+
+        if (count > 0) {
+            totalCompleteJob.innerText = count - 1; 
+        }
+    }
 });
+
+
+

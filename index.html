@@ -25,6 +25,7 @@
 </head>
 <body class="font-poppins bg-[#F4F7FF]">
     <header class="py-2 w-11/12 mx-auto">
+        <!-- navbar  -->
         <div class="flex justify-between py-2 bg-white rounded-lg px-3">
             <div>
                 <a class="btn btn-ghost text-2xl"><img src="assets/logo.png" alt=""> Dev<span class="font-bold">Board</span></a>
@@ -34,7 +35,7 @@
                     <img src="assets/checkbox.png" alt="">
                     <p class="font-bold text-3xl" id="total-complete-job">23</p>
                 </div>
-                <div>
+                <div id="change-color-btn">
                     <a href=""><img src="assets/theme-btn.png" alt=""></a>
                 </div>
             </div>
@@ -42,9 +43,11 @@
     </header>
     <main>
         <section class="w-11/12 mx-auto">
+
             <div class="flex gap-4">
                 <div class="w-9/12">
-                    <div class="flex justify-between p-2 bg-white rounded-lg">
+                    <!-- container card 1  -->
+                    <div class=" gap-2 flex justify-between p-2 bg-white rounded-lg">
                         <div class="bg-[#F4F7FF] rounded-lg">
                             <div class="flex items-center p-5 space-x-3">
                                 <img src="assets/checkbox.png" alt="">
@@ -60,11 +63,13 @@
                                 <h3 class="text-white font-medium text-2xl">Discover Something New Today!</h3>
                             </div>
                         </div>
-                        <div class="flex items-center p-5 bg-[#F4F7FF] space-x-3">
-                            <img src="assets/calender.png" alt="">
-                            <p>Wed , <span>Jul 28 2025</span></p>
+                        <div class="flex  items-center  p-5 bg-[#F4F7FF] space-x-5">
+                            <img class="" src="assets/calender.png" alt="">
+                            <p  class="" id="time-date"></p>
                         </div>
                     </div>
+
+                     <!-- container card 2  -->
                         <div class="grid grid-cols-3 p-2 gap-3 bg-white rounded-lg my-5">
                             <div class="bg-[#F4F7FF] rounded-lg p-5 space-y-3">
                                 <span class="bg-white inline-block p-4 rounded-lg">ShopEase</span>
@@ -79,7 +84,7 @@
                                         <h4 class="font-medium">21 March 2025</h4>
                                     </div>
                                     <div>
-                                        <button class="btn btn-primary complete-btn">Completed</button>
+                                        <button class="btn btn-primary btn-cm">Completed</button>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +101,7 @@
                                         <h4 class="font-medium">21 March 2025</h4>
                                     </div>
                                     <div>
-                                        <button class="btn btn-primary complete-btn">Completed</button>
+                                        <button class="btn btn-primary btn-cm">Completed</button>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +118,7 @@
                                         <h4 class="font-medium">21 March 2025</h4>
                                     </div>
                                     <div>
-                                        <button class="btn btn-primary complete-btn">Completed</button>
+                                        <button class="btn btn-primary btn-cm">Completed</button>
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +135,7 @@
                                         <h4 class="font-medium">21 March 2025</h4>
                                     </div>
                                     <div>
-                                        <button class="btn btn-primary complete-btn">Completed</button>
+                                        <button class="btn btn-primary btn-cm">Completed</button>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +152,7 @@
                                         <h4 class="font-medium">21 March 2025</h4>
                                     </div>
                                     <div>
-                                        <button class="btn btn-primary complete-btn">Completed</button>
+                                        <button class="btn btn-primary btn-cm">Completed</button>
                                     </div>
                                 </div>
                             </div>
@@ -164,20 +169,26 @@
                                         <h4 class="font-medium">21 March 2025</h4>
                                     </div>
                                     <div>
-                                        <button class="btn btn-primary complete-btn">Completed</button>
+                                        <button class="btn btn-primary btn-cm">Completed</button>
                                     </div>
                                 </div>
                             </div>
                         </div> 
                 </div>
+
+                <!-- log Activity -->
+
                 <div class="w-3/12 bg-white rounded-lg text-center space-y-5 pt-10 px-5" id="task-log">
                     <h2 class="font-medium text-xl">Activity Log</h2>
                     <button class="btn btn-primary" id="clear-logs">Clear History</button>
+                   
                 </div>
             </div>
            
         </section>
     </main>
     <script src="js/script.js"></script>
+    <script src="js/current.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>
